@@ -1,0 +1,68 @@
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 84, 202);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+    z-index: 1000;
+}
+
+
+.intro_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.slide_out {
+    transform: translateX(-100%);
+}
+
+
+.intro_banner {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+}
+
+
+.intro_img {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.intro_img img {
+    height: auto;
+    max-width: 150px;
+}
+
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

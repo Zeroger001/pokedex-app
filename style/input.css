@@ -1,0 +1,20 @@
+#searchInput {
+    max-width: 130px;
+    padding: 8px;
+    font-size: calc(1.2rem + 0.390625vw);
+    background-color: rgb(201, 201, 201);
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    outline: none;
+}
+
+
+#searchInput:focus {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 0, 0);
+}
+
+
+#searchInput::placeholder {
+    color: rgb(0, 0, 0);
+}

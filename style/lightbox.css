@@ -1,0 +1,354 @@
+#lightbox {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    place-items: center;
+    grid-template-rows: 1fr auto 0.25fr 1fr;
+    grid-template-columns: 0.25fr auto 0.25fr;
+    display: none;
+}
+
+
+#lightbox.active {
+    display: grid;
+}
+
+
+#cryButton {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+#shinyButton {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+#cryButton:hover {
+    scale: 1.3;
+}
+
+
+#shinyButton:hover {
+    scale: 1.3;
+}
+
+
+.pkm_arrow_left {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    cursor: pointer;
+
+    @media (max-width: 500px) {
+        display: flex;
+        grid-column: 2;
+        grid-row: 3;
+        width: 50%;
+        justify-self: start;
+        max-width: 100px;
+    }
+}
+
+
+.pkm_arrow_right {
+    grid-column: 3;
+    grid-row: 2;
+    width: 100%;
+    cursor: pointer;
+
+    @media (max-width: 500px) {
+        grid-column: 2;
+        grid-row: 3;
+        width: 50%;
+        justify-self: end;
+        max-width: 100px;
+    }
+}
+
+
+.lightbox_container {
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    max-width: 750px;
+
+    @media (max-width: 800px) {
+        width: 500px;
+    }
+
+    @media (max-width: 700px) {
+        width: 320px;
+    }
+}
+
+
+.lightbox_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0054ca;
+    border-bottom: 4px solid rgb(255, 96, 96);
+    border-radius: 25px 25px 0 0;
+}
+
+
+.lightbox_sprite {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 0.25fr auto;
+    grid-template-columns: 0.25 auto 0.25;
+}
+
+
+.lightbox_image_buttons {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.lightbox_showed_pokemon {
+    width: clamp(100px, 50%, 280px);
+    height: auto;
+
+    @media (max-width: 700px) {
+        width: 150px;
+    }
+}
+
+
+.lightbox_footer {
+    display: grid;
+    grid-template-columns: 0.25fr auto 0.25fr;
+    grid-template-rows: auto 0.15fr;
+    place-items: center;
+    background-color: #0054ca;
+    border-top: 4px solid rgb(255, 96, 96);
+    border-radius: 0 0 25px 25px;
+    width: 750px;
+    height: 300px;
+
+    @media (min-width: 1600px) {
+        height: 350px;
+    }
+
+    @media (max-width: 800px) {
+        width: 500px;
+        height: 520px;
+    }
+
+    @media (max-width: 700px) {
+        width: 320px;
+        place-items: start;
+    }
+
+    @media (max-width: 500px) {
+        height: 370px;
+    }
+}
+
+
+.lightbox_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 550px;
+}
+
+
+.data_arrow_left {
+    grid-row: 1;
+    grid-column: 1;
+    max-width: 75px;
+    cursor: pointer;
+
+    @media (max-width: 700px) {
+        place-self: center;
+    }
+}
+
+
+.data_arrow_right {
+    grid-row: 1;
+    grid-column: 3;
+    max-width: 75px;
+    cursor: pointer;
+
+    @media (max-width: 700px) {
+        place-self: center;
+    }
+}
+
+
+.lightbox_data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+}
+
+
+.base_data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 800px) {
+        gap: 0;
+    }
+}
+
+
+.base_types {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 700px) {
+        display: none;
+    }
+}
+
+
+.base_types img {
+    max-width: 150px;
+}
+
+
+.base_abilities {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 800px) {
+        gap: 0;
+    }
+}
+
+
+.space_between {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-width: 170px;
+    width: 90%;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.lightbox_stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    display: none;
+}
+
+
+.stat_bar_container {
+    width: 100px;
+    height: calc(1rem + 0.390625vw);
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.stat_bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.lightbox_evolve_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: none;
+}
+
+
+.evolve_sprites_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.evolution_sprite {
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 1));
+
+    @media (max-width: 700px) {
+        height: 100px;
+        width: 100px;
+    }
+
+    @media (max-width: 500px) {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+
+.evolution_arrow {
+    width: 50px;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        rotate: 90deg;
+        width: 35px;
+    }
+}
+
+
+.lightbox_foot_line {
+    grid-row: 2;
+    grid-column: 1/-1;
+    place-items: center;
+    text-align: center;
+    width: 100%;
+    border-top: 4px solid rgb(255, 96, 96);
+
+    @media (max-width: 500px) {
+        display: none;
+    }
+
+}

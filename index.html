@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description"
+        content="Interactive Pokedex web app built with HTML, CSS and JavaScript using the PokeAPI.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/loader.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/loader.css">
+    <link rel="stylesheet" href="style/buttons.css">
+    <link rel="stylesheet" href="style/pokemonCards.css">
+    <link rel="stylesheet" href="style/lightbox.css">
+    <link rel="stylesheet" href="style/input.css">
+    <link rel="stylesheet" href="style/intro.css">
+    <title>Pokeverse - Pokedex App</title>
+</head>
+
+
+<body>
+    <!-- Intro-Seite -->
+    <div id="intro">
+        <div class="intro_content">
+
+
+
+            <h1>Welcome to the Pokeverse!</h1>
+            <div class="intro_banner"><img src="img/pokebanner.png" alt="Pokemon Banner"></div>
+            <div class="intro_img">
+                <img src="img/pika.png" alt="Pokemon Pikachu">
+                <img src="img/charizard.png" alt="Pokemon Charizard">
+            </div>
+
+            <button id="enterBtn">Enter Pokeverse</button>
+
+            <div class="intro_img">
+                <img src="img/mewtwo.png" alt="Pokemon Mewtwo">
+                <img src="img/mew.png" alt="Pokemon Mew">
+            </div>
+
+
+
+            <h2>Developed by Stefan Seegets</h2>
+        </div>
+    </div>
+
+    <main>
+        <div id="page_container">
+
+            <header>
+                <a href="index.html"><img src="img/pokebanner.png" alt="Pokemon Banner"></a> <input type="text"
+                    inputmode="numeric" id="searchInput" placeholder="Searching...">
+            </header>
+            <div id="loader"><img src="img/loader.png" alt="Pokemon Loader"></div>
+            <div id="content_wrap">
+
+
+
+                <div id="main_container"></div>
+
+
+
+                <div id="lightbox"></div>
+
+                <button id="loadMoreBtn">Load 30 more Pokemon</button>
+                <button id="showAllBtn">Load All Pokemon</button>
+                <button id="scrollToTopBtn">↑ Go Top ↑</button>
+
+            </div>
+
+            <footer id="footer">
+                <img src="img/pokeball-small.png" alt="Pokeball">
+                <div class="footer_link">
+                    <a href="impressum.html" class="footer_Link"> Impressum</a> <a href="datenschutz.html"
+                        class="footer_Link">Datenschutz</a>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+</body>
+<script src="script/script.js"></script>
+<script src="script/loader.js"></script>
+<script src="script/renderPokemonCard.js"></script>
+<script src="script/buttons.js"></script>
+<script src="script/lightbox.js"></script>
+<script src="script/hover.js"></script>
+<script src="script/input.js"></script>
+<script src="script/intro.js"></script>
+
+</html>
